@@ -1,0 +1,21 @@
+.active-link {
+    color: #f2a325 !important;
+    background-position: 0 100%;
+    background-size: 100% 2px;
+    background-repeat: repeat-x;
+}
+
+.navbar-shadow {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@media (min-width: 1100px) {
+    .navbar {
+        width: 60%;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        justify-content: end;
+    }
+}

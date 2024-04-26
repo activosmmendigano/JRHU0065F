@@ -1,0 +1,14 @@
+@import 'src/assets/styles/_mixins.scss';
+
+app-tipificacion {
+    width: 51%;
+    display: block;
+
+    @include tablet() {
+        width: 80%;
+    }
+
+    @include mobile() {
+        width: 100%;
+    }
+}

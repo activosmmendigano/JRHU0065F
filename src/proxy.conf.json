@@ -1,0 +1,9 @@
+{
+    "/apiCustom/*": {
+        "target": "http://localhost:7001/JRHU0065B/ws",
+        "security": "false", 
+        "pathRewrite": {
+            "^/apiCustom/": "/"
+        }
+    }  
+}

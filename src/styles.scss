@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+/* Importing PrimeNg SCSS file. */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+/**
+    UTILIDADES GENERICAS 
+**/
+.size-font-title {
+    font-size: 1.2em;
+}
+
+.font-number-title {
+    font-size: 4em;
+    text-align: center;
+}
+
+.form-item-control {
+    border: none !important;
+}
+
+.color-text-empresa {
+    color: #f2a325;
+}
+
+.font-2rem {
+    font-size: 2rem;
+}
+
+.fit-content-class{
+    width: fit-content;
+}
+
+//Estilos para los links
+.hover-link {
+    background-image: linear-gradient(to right,
+            #f2a325,
+            #f2a325 50%,
+            #000 50%) !important;
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.hover-link:before {
+    content: '';
+    background: #f2a325;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hover-link:hover {
+    background-position: 0;
+}
+
+.hover-link:hover::before {
+    width: 100%;
+}
+// Fin estilos para los links
+
+/**
+    RESPONSIVE
+**/
+
+@media (max-width: 600px) {
+    .modal-style-responsive {
+        width: 90% !important;
+        height: 100% !important;
+    }
+}
+
+
+/**
+    IMPLEMENTACIONES
+**/
+
+p-overlay .p-component {
+    width: 100% !important;
+}
+
+.p-dropdown {
+    width: 100% !important;
+}
+
+// ESTILOS PARA EL EFECTO DEL NAVBAR
+
+.p-button.p-button-success.p-button-outlined,
+.p-buttonset.p-button-success>.p-button.p-button-outlined,
+.p-splitbutton.p-button-success>.p-button.p-button-outlined {
+    transition: 0.5s !important;
+}
+
+.p-button.p-button-success.p-button-outlined:enabled:hover,
+.p-buttonset.p-button-success>.p-button.p-button-outlined:enabled:hover,
+.p-splitbutton.p-button-success>.p-button.p-button-outlined:enabled:hover {
+    background-color: #22C55E !important;
+    color: #ffffff !important;
+    transition: 0.5s !important;
+}
+
+.p-button.p-button-warning.p-button-outlined, 
+.p-buttonset.p-button-warning > .p-button.p-button-outlined, 
+.p-splitbutton.p-button-warning > .p-button.p-button-outlined {
+    transition: 0.5s !important;
+}
+
+.p-button.p-button-warning.p-button-outlined:enabled:hover,
+.p-buttonset.p-button-warning>.p-button.p-button-outlined:enabled:hover,
+.p-splitbutton.p-button-warning>.p-button.p-button-outlined:enabled:hover {
+    background-color: #F59E0B !important;
+    color: #ffffff !important;
+    transition: 0.5s !important;
+}
+
+.pr-2 {
+    padding-right: 1rem;
+}
+// FIN ESTILOS PARA EL EFECTO DEL NAVBAR
