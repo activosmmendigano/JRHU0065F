@@ -1,4 +1,6 @@
 export enum ItemSession {
     USER_DATA = "userData",
-    SESSION = "session"
+    INDEX_BOOK = "libIngreso",
+    PROFILE = "profile",
+    USER = "usuario"
 }

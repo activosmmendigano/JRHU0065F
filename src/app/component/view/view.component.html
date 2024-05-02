@@ -1,16 +1,25 @@
 <div class="row">
-    <div class="col text-center">
-        <ng-template #selectEmpty>
-            <p class="h3"><i class="pi pi-user color-text-empresa font-2rem"></i> Bienvenida LAURA CAMILA ALVAREZ BARAHONA</p>
-        </ng-template>
-    </div>
-</div>
-<div class="row mt-3 navbar navbar-expand-sm navbar-light bg-light border-bottom border-bottom-dark navbar-shadow">
-    <div class="col">
-      <p-carousel [value]="documentFrames" [numVisible]="1" [circular]="true" [autoplayInterval]="5000">
-        <ng-template let-documentFrame pTemplate="carouselItem">
-          <iframe [src]="documentFrame.src" width="100%" height="500px"></iframe>
-        </ng-template>
-      </p-carousel>
-    </div>
+  <div class="col text-center">
+    <p class="h3">
+      <i class="pi pi-user color-text-empresa font-2rem"></i> Bienvenid@
+      {{ nombreUsuario }}
+    </p>
+    <p class="h5" style="text-align: justify">
+      En esta sección, podrás visualizar los exámenes médicos relacionados con
+      el ingreso de {{ candidato }}, asociados al libro de ingreso
+      {{ libConsecutivo }}, tanto para la empresa principal
+      {{ empresaPrincipal }} como para la empresa filial {{ empresaFilial }}.
+    </p>
   </div>
+</div>
+<div
+  class="row mt-3 navbar navbar-expand-sm navbar-light bg-light border-bottom border-bottom-dark navbar-shadow"
+>
+  <div class="col">
+    <p-carousel [value]="documentFrames" [numVisible]="1" [circular]="true">
+      <ng-template let-documentFrame pTemplate="carouselItem">
+        <iframe [src]="documentFrame.src" width="100%" height="500px"></iframe>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>

@@ -1,26 +1,49 @@
 <div class="justify-content-center d-flex">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom border-bottom-dark navbar-shadow">
-        <div class="container-fluid">
-            <a class="navbar-brand hover-link" id="logo-header" href="#">
-                <h3>Gestion documental examenes medicos</h3>
-            </a>
-            <button class="navbar-toggler" type="button" (click)="toggleNavbar = !toggleNavbar" data-toggle="collapse"
-                data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarMenu" [ngbCollapse]="toggleNavbar">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item hover-link">
-                        <a class="nav-link size-font-title" aria-current="page" routerLink="/view"
-                            routerLinkActive="active-link"><i class="pi pi-file-pdf color-text-empresa"></i>Ver exámenes médicos</a>
-                    </li>
-                    <li class="nav-item hover-link">
-                        <a class="nav-link size-font-title" routerLink="/upload" routerLinkActive="active-link"><i
-                                class="pi pi-send"></i>Cargar documentos</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <nav
+    class="navbar navbar-expand-sm navbar-light bg-light border-bottom border-bottom-dark navbar-shadow"
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" id="logo-header">
+        <h3>Gestión documental, exámenes médicos.</h3>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        (click)="toggleNavbar = !toggleNavbar"
+        data-toggle="collapse"
+        data-target="#navbarMenu"
+        aria-controls="navbarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse"
+        id="navbarMenu"
+        [ngbCollapse]="toggleNavbar"
+      >
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item hover-link">
+            <a
+              class="nav-link size-font-title"
+              aria-current="page"
+              routerLink="/view"
+              routerLinkActive="active-link"
+              ><i class="pi pi-file-pdf color-text-empresa"></i>Ver exámenes
+              médicos</a
+            >
+          </li>
+          <li class="nav-item hover-link" *ngIf="upload !== 'FALSE'">
+            <a
+              class="nav-link size-font-title"
+              routerLink="/upload"
+              routerLinkActive="active-link"
+              ><i class="pi pi-send"></i>Cargar documentos</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </div>

@@ -3,6 +3,9 @@ import { NotiflixService } from '../../shared/services/notiflix.service';
 import { UploadService } from '../../service/upload.service';
 import { Iupload } from '../../models/iupload';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { SessionStorageService } from 'src/app/shared/services/session-storage.service';
+import { IUsuarioSesion } from 'src/app/models/iusuario-sesion';
+import { ItemSession } from 'src/app/shared/constants/item-session';
 
 
 @Component({
@@ -11,10 +14,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./upload.component.scss'],
 })
 export class UploadComponent implements OnInit {
+  userDataFromSession!: IUsuarioSesion;
   constructor(
     private _service: UploadService,
+    private sessionStorageService: SessionStorageService,
     private _notiflixService: NotiflixService
-  ) {}
+  ) {    this.userDataFromSession = this.sessionStorageService.getItemJson(
+    ItemSession.USER_DATA
+  );}
 
   datatable!: Iupload[];
   upload!: Iupload;
