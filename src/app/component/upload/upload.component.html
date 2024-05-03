@@ -1,30 +1,64 @@
 <div class="row">
-    <div class="col text-center">
-        <p class="h3">Gestión de documentos</p>
-    </div>
-</div>
-<div class="row mt-3 align-items-center justify-content-center">
-    <div class="col-10 col-md-8 col-sm-10">
-        <p-dropdown class="form-control form-item-control card-img-bottom" 
-
-            pTooltip="Seleccione un tipo de examen para poder visualizar el cuadro de carga.">
-
-                <div class="flex align-items-center gap-2">
-
-                </div>
-        </p-dropdown>
-    </div>
+  <div class="col text-center">
+    <p class="h3">¡Importante!</p>
+    <p class="h5" style="text-align: justify">
+      Es importante tener claridad si los documentos a cargar están separados en
+      diferentes archivos PDF o si todos están compilados en un único PDF con
+      todos los exámenes solicitados. En caso de que todos los exámenes estén en
+      un solo PDF, por favor seleccione la opción "Único". De lo contrario,
+      seleccione la opción "Múltiple".
+    </p>
+  </div>
 </div>
 
+<p-selectButton
+  style="text-align: center"
+  [options]="[
+    { label: 'Múltiple', value: 'multiple' },
+    { label: 'Único', value: 'unico' }
+  ]"
+  [(ngModel)]="valuePDF"
+  optionLabel="label"
+  optionValue="value"
+  optionDisabled="constant"
+></p-selectButton>
+
 <div class="row mt-3 align-items-center justify-content-center">
-    <div class="col-10 col-md-8 col-sm-10">
-        <h4>Subir Documento</h4>
-        <div class="p-inputgroup">
-            <input type="text" pInputText placeholder="Seleccionar archivo..." readonly>
-            <span class="p-inputgroup-addon">
-                <i class="pi pi-upload"></i>
-            </span>
-        </div>
-        <button pButton type="button" label="Cargar" class="p-button-success"></button>
-    </div>
+  <p-dropdown
+    [options]="testsRequired"
+    [(ngModel)]="selectedTest"
+    optionLabel="prdDescripcion"
+    [filter]="true"
+    filterBy="prdDescripcion"
+    [showClear]="true"
+    placeholder="Seleccione el tipo de examen"
+  >
+    <ng-template pTemplate="selectedItem" let-selectedOption>
+      <div>
+        {{ selectedOption.prdProducto }} - {{ selectedOption.prdDescripcion }}
+      </div>
+    </ng-template>
+    <ng-template let-test pTemplate="item">
+      <div>{{ test.prdProducto }} - {{ test.prdDescripcion }}</div>
+    </ng-template>
+  </p-dropdown>
+</div>
+
+<div class="row mt-3 align-items-center justify-content-center">
+  <div class="col-10 col-md-8 col-sm-10">
+    <h4>Subir Documento</h4>
+    <p-fileUpload
+      name="myfile[]"
+      url="https://www.primefaces.org/cdn/api/upload.php"
+      [multiple]="false"
+      accept=".pdf"
+    >
+      <ng-template pTemplate="toolbar">
+        <div class="py-3">Upload 3 Files</div>
+      </ng-template>
+      <ng-template let-file pTemplate="file">
+        <div>Custom UI to display a file</div>
+      </ng-template>
+    </p-fileUpload>
+  </div>
 </div>

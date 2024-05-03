@@ -25,6 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
 import { TagModule } from 'primeng/tag';
 import { CarouselModule } from 'primeng/carousel';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { FileUploadModule } from 'primeng/fileupload';
 
 
 @NgModule({
@@ -57,6 +59,8 @@ import { CarouselModule } from 'primeng/carousel';
     ReactiveFormsModule,
     TriStateCheckboxModule,
     CarouselModule,
+    SelectButtonModule,
+    FileUploadModule,
     TagModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

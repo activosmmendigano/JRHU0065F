@@ -1,25 +1,61 @@
-<div class="row">
-  <div class="col text-center">
-    <p class="h3">
-      <i class="pi pi-user color-text-empresa font-2rem"></i> Bienvenid@
-      {{ nombreUsuario }}
-    </p>
-    <p class="h5" style="text-align: justify">
-      En esta sección, podrás visualizar los exámenes médicos relacionados con
-      el ingreso de {{ candidato }}, asociados al libro de ingreso
-      {{ libConsecutivo }}, tanto para la empresa principal
-      {{ empresaPrincipal }} como para la empresa filial {{ empresaFilial }}.
-    </p>
+<div class="custom-card" *ngIf="view !== 'FALSE'">
+  <div class="row">
+    <div class="col text-center">
+      <p class="h3">
+        <i class="pi pi-user color-text-empresa font-2rem"></i> Bienvenid@
+        {{ nombreUsuario }}
+      </p>
+      <p class="h5" style="text-align: justify">
+        En esta sección, podrás visualizar los exámenes médicos relacionados con
+        el ingreso de {{ candidato }}, asociados al libro de ingreso
+        {{ libConsecutivo }}, tanto para la empresa principal
+        {{ empresaPrincipal }} como para la empresa filial {{ empresaFilial }}.
+      </p>
+    </div>
+  </div>
+
+  <p class="h5" style="text-align: justify">
+    Los exámenes que se requieren para el ingreso de este candidato deben ser
+    revisados para verificar su correcta carga y asegurar que correspondan a los
+    documentos necesarios para el proceso de ingreso. Para facilitar la revisión, si alguno de los documentos solicitados 
+    no se encuentra cargado, el tipo en la lista aparecerá en <span style="color: red; font-weight: bold;">rojo</span>.
+</p>
+
+
+  <div *ngIf="testsRequired && testsRequired.length > 0">
+    <ul>
+      <li *ngFor="let test of testsRequired" [ngClass]="{'red-text': !test.coincidente}">
+        {{ test.prdProducto }} - {{ test.prdDescripcion }}
+      </li>
+    </ul>
+  </div>
+
+  <div
+    class="row mt-3 navbar navbar-expand-sm navbar-light bg-light border-bottom border-bottom-dark navbar-shadow"
+  >
+    <div class="col">
+      <p-carousel [value]="documentFrames" [numVisible]="1" [circular]="true">
+        <ng-template let-documentFrame pTemplate="carouselItem">
+          <iframe
+            [src]="documentFrame.src"
+            width="100%"
+            height="500px"
+          ></iframe>
+          <p class="h5">{{ documentFrame.nombreExamen }}</p>
+        </ng-template>
+      </p-carousel>
+    </div>
   </div>
 </div>
-<div
-  class="row mt-3 navbar navbar-expand-sm navbar-light bg-light border-bottom border-bottom-dark navbar-shadow"
->
-  <div class="col">
-    <p-carousel [value]="documentFrames" [numVisible]="1" [circular]="true">
-      <ng-template let-documentFrame pTemplate="carouselItem">
-        <iframe [src]="documentFrame.src" width="100%" height="500px"></iframe>
-      </ng-template>
-    </p-carousel>
+
+<div class="custom-card" *ngIf="view !== 'TRUE'">
+  <div class="card-content">
+    <p class="h3">Estimado {{ nombreUsuario }}.</p>
+    <p class="h5">
+      Lamentablemente no cuenta con acceso autorizado para visualizar esta
+      sección. Le recomendamos que se comunique con el área de mantenimiento de
+      sistemas para verificar sus permisos y brindarle la asistencia necesaria.
+    </p>
+    <img src="assets/resources/stop.jpg" alt="Imagen de parada" />
   </div>
 </div>

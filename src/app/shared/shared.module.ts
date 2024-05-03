@@ -15,6 +15,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
 import { AccordionModule } from 'primeng/accordion';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -38,6 +39,7 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     ButtonModule,
     TriStateCheckboxModule,
     AccordionModule,
+    SelectButtonModule,
     NgbCollapseModule
   ],
   exports: [
