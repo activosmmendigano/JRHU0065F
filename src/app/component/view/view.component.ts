@@ -29,7 +29,7 @@ export class ViewComponent implements OnInit {
   nombreUsuario: string = '';
   candidato: string = '';
   userProfile!: Proceso;
-  view: string  = ''; 
+  view: string  = 'TRUE'; 
   upload: string = ''; 
   tests!: View[];
   testsRequired!: ITest[];
@@ -66,7 +66,6 @@ export class ViewComponent implements OnInit {
       if (userProfileOrNull !== null) {
         this.userProfile = userProfileOrNull;
         this.view = this.userProfile.rolVer;
-        this.upload = this.userProfile.rolCargar;
       } else {
         // Si getFuntionByRole() devuelve null, manejar la situación aquí
         console.error('El perfil de usuario es null');

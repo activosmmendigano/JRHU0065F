@@ -1,0 +1,67 @@
+
+.card-body  {
+
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(210, 218, 210);
+    color: rgb(8, 63, 46);
+    padding: 10px 15px;
+    text-align: center;
+
+  }
+
+.card-body .custom-file-upload {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(167, 180, 167);
+    color: rgb(9, 20, 16);
+    padding: 10px 15px;
+    text-align: center;
+  }
+  
+  .card-body .custom-file-upload:hover {
+    background-color:  #F59E0B;
+    color: rgb(121, 156, 121);
+  }
+  
+  .card-body .custom-file-upload input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .card-body .custom-file-upload span {
+    display: block;
+  }
+  .custom-card {
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color:rgb(210, 218, 210); /* Color de fondo ligeramente gris */
+    width: 100%;
+    margin: auto; /* Centrar la tarjeta horizontalmente */
+    padding: 20px; /* Añadir espacio interno */
+  }
+  .card-content {
+    text-align: center; /* Centrar el contenido */
+  }
+  
+  .card-content p {
+    margin-bottom: 10px; /* Espacio entre párrafos */
+  }
+  .card-content img {
+    max-width: 70%; /* Asegurar que la imagen no supere el ancho de la tarjeta */
+    max-height: 70%;
+    border-radius: 10px;
+  }
