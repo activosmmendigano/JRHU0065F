@@ -1,6 +1,5 @@
 export interface Proceso {
-    grupoEmpresarial: number;
-    mesa: number;
-    subProceso: number;
-    nombre: string;
+    rolAnexo: string;
+    rolCargar: string;
+    rolVer: string;
 }

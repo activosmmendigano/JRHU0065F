@@ -1,8 +1,9 @@
 export interface Iupload {
-    idUpload: number;
-    nombre: string;
-    subtitulo: string;
-    activo: boolean;
-    audUsuario: string;
-    audFecha: Date;
+    libConsecutivo: number;
+    usuario: string;
+    prdCodigo: number;
+    tdcTdEpl: string;
+    eplNd: string;
+    prdProducto: string;
+    base64: string;
 }

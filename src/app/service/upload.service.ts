@@ -35,12 +35,8 @@ export class UploadService {
     });
   }
 
-  create(upload: Iupload): Observable<IDatabaseResponse> | null {
-    return this.http.post<IDatabaseResponse>(environment.urlServices + '/upload/create', upload);
-  }
-
-  update(upload: Iupload): Observable<IDatabaseResponse> | null {
-    return this.http.put<IDatabaseResponse>(environment.urlServices + '/upload/update', upload);
+  create(upload: Iupload): Observable<any> {
+    return this.http.post<any>(environment.urlServices + '/azfile/upload', upload);
   }
 
 }

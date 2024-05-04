@@ -16,8 +16,11 @@ export class SessionStorageService {
   }
 
   getItem(key: string): any {
-    console.log('key desde getItem: '+key);
     return sessionStorage.getItem(key);
+  }
+  getItemJson(key: string): any {
+    const value = sessionStorage.getItem(key);
+    return value ? JSON.parse(value) : null;
   }
 
 }

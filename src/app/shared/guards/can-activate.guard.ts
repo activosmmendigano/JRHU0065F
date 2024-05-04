@@ -4,5 +4,7 @@ import { AuthService } from '../services/auth.service';
 
 export const canActivateTeam: CanActivateFn =
   (route: ActivatedRouteSnapshot) => {
-    return inject(AuthService).canActivate(route.queryParams['libConsecutivo']);
+    const libConsecutivo = route.queryParams['libConsecutivo'];
+    const usuUsuario = route.queryParams['usuUsuario'];
+    return inject(AuthService).canActivate(libConsecutivo, usuUsuario);
   };

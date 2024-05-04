@@ -1,3 +1,29 @@
-.box-div-shadow{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.box-div-shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.custom-card {
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #f4f4f4; /* Color de fondo ligeramente gris */
+  width: 90%;
+  margin: auto; /* Centrar la tarjeta horizontalmente */
+  padding: 20px; /* Añadir espacio interno */
+}
+
+.card-content {
+  text-align: center; /* Centrar el contenido */
+}
+
+.card-content p {
+  margin-bottom: 10px; /* Espacio entre párrafos */
+}
+.card-content img {
+  max-width: 70%; /* Asegurar que la imagen no supere el ancho de la tarjeta */
+  max-height: 70%;
+  border-radius: 10px;
+}
+
+.red-text {
+  color: rgb(241, 7, 7);
+}
+

@@ -1,6 +1,10 @@
+// Importar mixins y otras dependencias
 @import 'src/assets/styles/_mixins.scss';
 
-app-tipificacion {
+
+
+// Estilos específicos para el componente 'app-tipificacion'
+app-upload {
     width: 51%;
     display: block;
 
@@ -11,4 +15,8 @@ app-tipificacion {
     @include mobile() {
         width: 100%;
     }
+
+    // Agregar imagen de fondo
+    background-image: url('../assets/resources/fondo.jpg');
+    background-size: cover; // Para cubrir todo el área del elemento
 }
