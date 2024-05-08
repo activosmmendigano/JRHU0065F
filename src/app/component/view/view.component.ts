@@ -34,7 +34,8 @@ export class ViewComponent implements OnInit {
   tests!: View[];
   testsRequired!: ITest[];
   kindOftest!: string[];
-  private _test: any;
+  uniquePdf!: Boolean;
+
 
 
   constructor(
@@ -136,17 +137,27 @@ export class ViewComponent implements OnInit {
     }
   }
   compareValuesAndHighlight(): void {
-    // Iterar sobre los valores de kindOftest
-    console.log('desde compareValuesAndHighlight()'+ this.kindOftest)
+    let foundSpecialValue = false;
+
     for (const kindTest of this.kindOftest) {
-      // Verificar si el valor está presente en testsRequired
-      const foundTest = this.testsRequired.find(test => test.prdProducto === kindTest);
-      if (foundTest) {
-        // Marcar el valor como coincidente y permitir que se pinte en verde en el HTML
-        foundTest.coincidente = true;
+      if (kindTest === '720784-000') {
+        this.testsRequired.forEach(test => test.coincidente = true);
+        foundSpecialValue = true;
+        this.uniquePdf  = true;
+        break;  
+      }
+    }
+
+    if (!foundSpecialValue) {
+      for (const kindTest of this.kindOftest) {
+        const foundTest = this.testsRequired.find(test => test.prdProducto === kindTest);
+        if (foundTest) {
+          foundTest.coincidente = true;
+        }
       }
     }
   }
+
   
   setUrl(testsDownload: View[]): void {
     this.documentFrames = [];
@@ -159,7 +170,6 @@ export class ViewComponent implements OnInit {
         if(test.nombreArchivo){
         this.documentFrames.push({ src: safeUrl, nombreExamen: test.nombreArchivo, cargado: '' });
         this.kindOftest.push(test.tipoExamen);
-        console.log('desde setUrl'+ this.kindOftest)
       }
       }
     } else {

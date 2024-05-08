@@ -63,8 +63,6 @@ export class UploadComponent implements OnInit {
         this.userProfile = userProfileOrNull;
         this.attachedView = this.userProfile.rolAnexo;
         this.uploadView = this.userProfile.rolCargar;
-        console.log('this.attachedView : ' + this.attachedView);
-        console.log('this.uploadView : ' + this.uploadView);
       } else {
         // Si getFuntionByRole() devuelve null, manejar la situación aquí
         console.error('El perfil de usuario es null');
@@ -134,9 +132,7 @@ export class UploadComponent implements OnInit {
   }
   
   onFileUpload(event: any) {
-    // Aquí puedes acceder al archivo cargado
     const uploadedFiles = event.files;
-    console.log('Archivos cargados:', uploadedFiles);
      this.uploadAttachedTest(uploadedFiles[0]);
   }
 

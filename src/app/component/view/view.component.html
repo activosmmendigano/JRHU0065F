@@ -21,7 +21,6 @@
     no se encuentra cargado, el tipo en la lista aparecerá en <span style="color: red; font-weight: bold;">rojo</span>.
 </p>
 
-
   <div *ngIf="testsRequired && testsRequired.length > 0">
     <ul>
       <li *ngFor="let test of testsRequired" [ngClass]="{'red-text': !test.coincidente}">
@@ -29,6 +28,10 @@
       </li>
     </ul>
   </div>
+  <p class="h5" style="text-align: justify" *ngIf="uniquePdf">
+    El analista de contratos ha cargado un archivo PDF del tipo 720784-000, el cual contiene un compilado de todos los exámenes requeridos. 
+    Por favor, verifique que todos los exámenes necesarios estén incluidos en este documento.
+</p>
 
   <div
     class="row mt-3 navbar navbar-expand-sm navbar-light bg-light border-bottom border-bottom-dark navbar-shadow"
